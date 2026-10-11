@@ -417,6 +417,42 @@
   .tip-box.show {
     display: block;
   }
+
+  .fields-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .field-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .field-label {
+    font-size: 11.5px;
+    color: #999;
+    font-weight: 500;
+  }
+
+  .field-input {
+    width: 100%;
+    background: #0f0f0f;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+    font-size: 12.5px;
+    color: #e0e0e0;
+    outline: none;
+    transition: border-color 0.25s;
+  }
+
+  .field-input:focus {
+    border-color: #ff0000;
+  }
 </style>
 </head>
 <body>
@@ -444,9 +480,15 @@
       </label>
     </div>
 
-    <div class="status-badge off" id="statusBadge">
-      <span class="status-dot"></span>
-      <span id="statusText">Фикс выключен</span>
+    <div class="fields-row">
+      <div class="field-group">
+        <label class="field-label" for="hostInput">Сервер (IP / хост)</label>
+        <input type="text" id="hostInput" class="field-input" placeholder="127.0.0.1" value="127.0.0.1">
+      </div>
+      <div class="field-group" style="max-width: 110px;">
+        <label class="field-label" for="portInput">Порт</label>
+        <input type="number" id="portInput" class="field-input" placeholder="10808" min="1" max="65535" value="10808">
+      </div>
     </div>
 
     <div class="help-link" id="helpLink">
@@ -470,7 +512,7 @@
       <button class="modal-btn" id="parseBtn">Найти настройки автоматически</button>
       <div class="error-msg" id="errorMsg"></div>
       <div class="tip-box" id="tipBox">
-        💡 Нет программы для обхода блокировок? Попробуйте Happ или INCY — они работают с этим расширением.
+        💡 Нет программы для обхода блокировок? Попробуйте Happ или INCY - они работают с этим расширением.
       </div>
     </div>
   </div>

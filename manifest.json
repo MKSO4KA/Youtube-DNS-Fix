@@ -10,8 +10,5 @@
   "action": {
     "default_popup": "popup.html",
     "default_title": "YouTube Фикс"
-  },
-  "icons": {
-    "128": "icons/icon128.png"
   }
 }
